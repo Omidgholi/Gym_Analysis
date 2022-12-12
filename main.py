@@ -38,6 +38,6 @@ bottom_quart = data[data["count"].between(bottom_quartile, top_quartile)]
 ax = sns.lineplot(data=data, x="time", y="count", hue="venue", ci=None)
 ax.set(xlabel="Time", ylabel="Count")
 ax.set_title(f"{venue} venues from {start_date} to {end_date} and {start_time}:00 to {end_time}:00")
-# plt.legend(bbox_to_anchor=(1.01, 1), borderaxespad=0)
+plt.legend(bbox_to_anchor=(1.01, 1), borderaxespad=0)
 plt.show()
 plt.savefig("test.png")
