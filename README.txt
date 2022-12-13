@@ -8,4 +8,4 @@ USAGE
 
 ---RUNNING THE PROGRAM---
 
-1) Run main.py
+1) Run age_verification.py

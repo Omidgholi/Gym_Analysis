@@ -53,7 +53,7 @@ def main():
 
 
         print(start_date, end_date)
-        venue = clicked.get()
+        venue = venue_select.get()
         print(venue)
         root.destroy()
         statistics.gym_analysis(venue, start_date, end_date)
@@ -65,14 +65,14 @@ def main():
         range_selection_label.destroy()
         venue_label = tk.Label(text="Please select a venue you would like to analyse from the options below:", bg="red2", fg="black", font=8)
         venue_label.grid(pady=5)
-        global clicked
-        clicked = StringVar(root)
-        clicked.set("ALL")
+        global venue_select
+        venue_select = StringVar(root)
+        venue_select.set("ALL")
         venue_options = ["ALL","Entry","Arc Floor One", "Climbing", "Arc Olympic Lifting Zones", "Arc Floor Two",
                                          "South Court", "Four Court Gym", "North Court", "Recreation Pool", "Competition Pool",
                                          "Arc Express", "Spa", "Aquaplex Pool Deck", "Tennis Courts"]
-        venue_select = OptionMenu(root, clicked, *venue_options)
-        venue_select.grid(pady=5)
+        venue_menu = OptionMenu(root, venue_select, *venue_options)
+        venue_menu.grid(pady=5)
 
         analysis_button = tk.Button(root, text="Submit", command=analysis, font=6)
         analysis_button.grid(pady=5)

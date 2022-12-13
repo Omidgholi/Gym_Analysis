@@ -11,8 +11,14 @@ def gym_analysis(venue, start_date, end_date):
 
 
     cols = ["venue", "date", "time", "status", "count"]
-    #df = pd.read_csv("occupancy_data_new.csv",names=cols).drop_duplicates()
+
+
     df = pd.read_csv("test.csv",names=cols)
+
+
+
+
+
 
     df["date"] = pd.to_datetime(df["date"], infer_datetime_format=True, cache=True, errors="coerce")
     df['time'] = pd.to_datetime(df['time'], infer_datetime_format=True, cache=True, errors="coerce").dt.hour
@@ -23,8 +29,7 @@ def gym_analysis(venue, start_date, end_date):
 
     if start_date is None and end_date is None:
         if venue == "ALL":
-            data = df[
-                df["status"].eq("Open")]# & df['time']].between(start_time,end_time)
+            data = df[df["status"].eq("Open") & df['time'].between(start_time,end_time)]
         else:
             data = df[df["venue"].eq(venue) & df["status"].eq("Open") & df['time'].between(start_time, end_time)]
     else:
