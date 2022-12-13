@@ -58,11 +58,13 @@ def gym_analysis(venue, start_date, end_date):
         ax.set_title(f"Occupancy Data for {venue}")
     else:
         ax.set_title(f"Occupancy Data for {venue} from {start_date} to {end_date}")
-    plt.legend(bbox_to_anchor=(1.01, 1), borderaxespad=0)
+    plt.savefig("test.png", pad_inches=0.5)
     plt.show()
-    plt.savefig("test.png")
+
+
+
 
 
     #bottom_quart["time"] = bottom_quart["time"].dt.hour
-    data = data.groupby(["time", "venue"]).mean().reset_index()
+    data = data.groupby(["time", "venue"]).mean(numeric_only=True).reset_index()
     data.to_csv("data.csv", index=False)
