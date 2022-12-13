@@ -68,7 +68,7 @@ def main():
         global venue_select
         venue_select = StringVar(root)
         venue_select.set("ALL")
-        venue_options = ["ALL","Entry","Arc Floor One", "Climbing", "Arc Olympic Lifting Zones", "Arc Floor Two",
+        venue_options = ["ALL","Arc Floor One", "Climbing", "Arc Olympic Lifting Zones", "Arc Floor Two",
                                          "South Court", "Four Court Gym", "North Court", "Recreation Pool", "Competition Pool",
                                          "Arc Express", "Spa", "Aquaplex Pool Deck", "Tennis Courts"]
         venue_menu = OptionMenu(root, venue_select, *venue_options)
