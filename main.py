@@ -7,10 +7,11 @@ from PIL import ImageTk, Image
 import os
 import statistics
 import pandas as pd
-
+import datetime
 
 
 def serve_end_cal():
+    """This is a function that"""
     global end_cal
     global end_button
     start_button.config(state="disabled")
@@ -21,11 +22,13 @@ def serve_end_cal():
 
 
 def get_date():
+    """This is a function that"""
     select_venue()
     end_button.config(state="disabled")
 
 
 def range_data():
+    """This is a function that"""
     all_button.destroy()
     range_button.destroy()
     start_cal.grid(pady=5)
@@ -33,18 +36,18 @@ def range_data():
 
 
 def all_data():
+    """This is a function that"""
     all_button.destroy()
     range_button.destroy()
     select_venue()
 
 
 def analysis():
+    """This is a function that"""
     try:
         start_date = pd.to_datetime(start_cal.get_date(), infer_datetime_format=True, cache=True)
         end_date = pd.to_datetime(end_cal.get_date(), infer_datetime_format=True, cache=True)
     except:
-        #start_date = pd.to_datetime("1/1/2000", infer_datetime_format=True)
-        #end_date = pd.to_datetime("1/1/2070", infer_datetime_format=True)
         start_date = None
         end_date = None
 
@@ -58,6 +61,7 @@ def analysis():
 
 
 def select_venue():
+    """This is a function that"""
     range_selection_label.destroy()
     venue_label = tk.Label(text="Please select a venue you would like to analyse from the options below:", bg="red2", fg="black", font=8)
     venue_label.grid(pady=5)
@@ -104,4 +108,7 @@ start_cal = DateEntry(root, maxdate=date.today())
 
 start_button = tk.Button(text="Submit Start Range", command=serve_end_cal, font=6)
 
-root.mainloop()
+
+
+if __name__ == '__main__':
+    root.mainloop()
