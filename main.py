@@ -89,7 +89,7 @@ def main():
     serve_image = Label(root, image=image)
     serve_image.grid()
     date_label = tk.Label(text="How would you like to sort through the data?", bg="red2", fg="black")
-    # range and all buttons
+
     gym_analyzer_label = tk.Label(text="ARC Gym Analyzer!", bg="red2", fg="black", font=12)
     gym_analyzer_label.grid(pady=5)
 
@@ -98,7 +98,7 @@ def main():
 
     all_button = tk.Button(text="All Dates", command=all_data, bg="white", fg="black", font=6)
     range_button = tk.Button(text="Date Range", command=range_data, bg="white", fg="black", font=6)
-    # position on range buttons
+
     all_button.grid(pady=5)
     range_button.grid(pady=5)
 

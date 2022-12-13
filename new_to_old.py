@@ -9,7 +9,7 @@ df_new["venue"] = df_new["venue"].replace(['ARC Floor 2'], 'Arc Floor Two')
 df_new["venue"] = df_new["venue"].replace(['4 Court Gym'], 'Four Court Gym')
 df_new["venue"] = df_new["venue"].replace(['ARC Express'], 'Arc Express')
 
-df_old = pd.read_csv("test.csv",names=cols)
+df_old = pd.read_csv("old_ledger.csv", names=cols)
 
-pd.concat([df_new, df_old]).to_csv("final_ledger.csv", index=False)
+pd.concat([df_new, df_old]).to_csv("combined_ledger.csv", index=False)
 print("Done")

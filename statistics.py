@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import tkinter.messagebox
+import tkinter as tk
+from tkinter import messagebox
 
 
 #Make sure dates are in correct format
@@ -12,20 +14,17 @@ def gym_analysis(venue, start_date, end_date):
 
     cols = ["venue", "date", "time", "status", "count"]
 
-
-    df = pd.read_csv("test.csv",names=cols)
-
-
-
-
-
-
-    df["date"] = pd.to_datetime(df["date"], infer_datetime_format=True, cache=True, errors="coerce")
-    df['time'] = pd.to_datetime(df['time'], infer_datetime_format=True, cache=True, errors="coerce").dt.hour
+    try:
+        df = pd.read_csv("combined_ledger.csv", names=cols)
+        df["date"] = pd.to_datetime(df["date"], infer_datetime_format=True, cache=True, errors="coerce")
+        df['time'] = pd.to_datetime(df['time'], infer_datetime_format=True, cache=True, errors="coerce").dt.hour
+        df["count"] = pd.to_numeric(df["count"], errors="coerce")
+    except:
+        tk.messagebox.showerror(message="No Data Found")
+        exit()
 
     start_time = 0
     end_time = 24
-
 
     if start_date is None and end_date is None:
         if venue == "ALL":
@@ -50,8 +49,8 @@ def gym_analysis(venue, start_date, end_date):
         print("Bottom Quartile")
         print(bottom_quart)
     except:
-        tkinter.messagebox.showerror(message="No data available for this date range", title="Error", icon="error")
-        exit()
+            tkinter.messagebox.showerror(message="No data available for this date range", title="Error", icon="error")
+            exit()
 
 
 
@@ -71,5 +70,8 @@ def gym_analysis(venue, start_date, end_date):
 
 
     #bottom_quart["time"] = bottom_quart["time"].dt.hour
-    data = data.groupby(["time", "venue"]).mean(numeric_only=True).reset_index()
+    data = data.groupby(["time", "venue"]).mean(numeric_only=True).round(0).reset_index().sort_values(by="count")
+    low_count_data = data.groupby(["time"]).mean(numeric_only=True).round(0).reset_index().sort_values(by="count")
     data.to_csv("data.csv", index=False)
+
+gym_analysis("Arc Floor One", None, None)
