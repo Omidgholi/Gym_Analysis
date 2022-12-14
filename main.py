@@ -1,3 +1,5 @@
+# Omid Gholizadeh and Ridge del Rio
+#this script serves main GUI and calls on other scripts to perfrom analysis as neccessary
 import tkinter as tk
 import tkinter.messagebox
 from datetime import date
