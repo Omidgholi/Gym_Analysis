@@ -47,8 +47,8 @@ def gym_analysis(venue, start_date, end_date):
         top_quartile = round(data["count"].quantile(0.75))  # Calculates the top quartile
         average = round(data["count"].mean())  # Calculates the average
         print(f"Venue: {venue}\nBottom Quartile: {bottom_quartile}\nAverage: {average}\nTop Quartile: {top_quartile}")
-    except:
-            tk.messagebox.showerror(message="No output available for this date range", title="Error", icon="error")  # Throws an error if the user selects a date range that is not in the database
+    except:  # Throws an error if the user selects a date range that is not in the database
+            tk.messagebox.showerror(message="No output available for this date range", title="Error", icon="error")
             exit()
 
 
@@ -60,6 +60,6 @@ def gym_analysis(venue, start_date, end_date):
         ax.set_title(f"Occupancy Data for {venue} from {start_date} to {end_date}")
     plt.savefig("output/graph.png", pad_inches=0.5) # Saves the graph as a png file
 
-
-    data = data.groupby(["time", "venue"]).mean(numeric_only=True).round(0).reset_index().sort_values(by="count") # Groups the output by time and venue and calculates the average
+    # Groups the output by time and venue and calculates the average
+    data = data.groupby(["time", "venue"]).mean(numeric_only=True).round(0).reset_index().sort_values(by="count")
     data.to_csv("output/data.csv", index=False) # Saves the output as a csv file in output folder
