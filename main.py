@@ -11,7 +11,9 @@ import datetime
 
 def main():
     def serve_end_cal():
-        """This is a function that"""
+        """This is a function that is called when the user clicks on the 'submit start range' button.
+         It also creates and positions the 'submit end range button' and calls the 'get_date' function
+         when the 'submit end range button' is clicked"""
         global end_cal
         global end_button
         start_button.config(state="disabled")
@@ -22,13 +24,15 @@ def main():
 
 
     def get_date():
-        """This is a function that"""
+        """This is a function that calls the select venue function. It is called when the user clicks the
+         'submit end range button' and disables the button so the user cannot submit multiple ranges"""
         select_venue()
         end_button.config(state="disabled")
 
 
     def range_data():
-        """This is a function that"""
+        """This is a function that destroys the venue selection buttons and positions the start range button.
+        This function is called when the user selects the 'select range' of dates button"""
         all_button.destroy()
         range_button.destroy()
         start_cal.grid(pady=5)
@@ -36,14 +40,16 @@ def main():
 
 
     def all_data():
-        """This is a function that"""
+        """This is a function that calls the select venue function and destroys the 'date range' button. This
+        function is called when the user clicks the 'all-dates' button"""
         all_button.destroy()
         range_button.destroy()
         select_venue()
 
 
     def analysis():
-        """This is a function that"""
+        """This is a function that runs the analysis when the user clicks the 'submit' button after making
+        a selection for date range and venue. This function is called within the select venue function"""
         try:
             start_date = pd.to_datetime(start_cal.get_date(), infer_datetime_format=True, cache=True)
             end_date = pd.to_datetime(end_cal.get_date(), infer_datetime_format=True, cache=True)
@@ -61,7 +67,9 @@ def main():
 
 
     def select_venue():
-        """This is a function that"""
+        """This is a function that provides the user with a dropdown list of the ARC venues for them to make a
+        selection. It creates and positions a venue selection label, the 'submit' button to run the analysis, and
+        an informational label that informs the user of what will happen upon clicking submit"""
         range_selection_label.destroy()
         venue_label = tk.Label(text="Please select a venue you would like to analyse from the options below:", bg="red2", fg="black", font=8)
         venue_label.grid(pady=5)
