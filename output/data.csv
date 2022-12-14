@@ -36,20 +36,20 @@ time,venue,count
 18.0,Competition Pool,1.0
 15.0,North Court,1.0
 11.0,South Court,1.0
-15.0,South Court,1.0
+0.0,South Court,1.0
 16.0,North Court,1.0
 7.0,Four Court Gym,1.0
-0.0,South Court,1.0
+14.0,Aquaplex Pool Deck,1.0
 20.0,Aquaplex Pool Deck,1.0
 12.0,Spa,1.0
 11.0,Recreation Pool,1.0
-14.0,Aquaplex Pool Deck,1.0
 23.0,North Court,1.0
 13.0,Recreation Pool,2.0
 15.0,Aquaplex Pool Deck,2.0
 11.0,Competition Pool,2.0
 12.0,Recreation Pool,2.0
 15.0,Recreation Pool,2.0
+15.0,South Court,2.0
 14.0,Recreation Pool,2.0
 16.0,Recreation Pool,2.0
 13.0,Tennis Courts,2.0
@@ -106,10 +106,10 @@ time,venue,count
 19.0,Arc Express,13.0
 18.0,Climbing,13.0
 14.0,Four Court Gym,13.0
+15.0,Four Court Gym,14.0
 20.0,South Court,14.0
 6.0,Arc Floor Two,14.0
 0.0,Arc Floor Two,15.0
-15.0,Four Court Gym,15.0
 13.0,Arc Express,15.0
 15.0,Climbing,16.0
 16.0,Climbing,16.0
@@ -149,9 +149,9 @@ time,venue,count
 21.0,Four Court Gym,42.0
 10.0,Arc Floor Two,42.0
 7.0,Arc Floor One,42.0
-15.0,Arc Olympic Lifting Zones,43.0
 19.0,Arc Olympic Lifting Zones,43.0
 11.0,Arc Olympic Lifting Zones,44.0
+15.0,Arc Olympic Lifting Zones,44.0
 13.0,Arc Olympic Lifting Zones,44.0
 8.0,Arc Floor One,46.0
 20.0,Arc Olympic Lifting Zones,47.0
@@ -170,10 +170,10 @@ time,venue,count
 11.0,Arc Floor Two,63.0
 16.0,Arc Floor Two,73.0
 19.0,Arc Floor One,80.0
+18.0,Arc Floor Two,83.0
 20.0,Arc Floor Two,84.0
 21.0,Arc Floor One,84.0
 17.0,Arc Floor Two,84.0
-18.0,Arc Floor Two,84.0
 12.0,Arc Floor One,85.0
 11.0,Arc Floor One,87.0
 14.0,Arc Floor One,90.0
@@ -181,5 +181,5 @@ time,venue,count
 13.0,Arc Floor One,97.0
 20.0,Arc Floor One,106.0
 16.0,Arc Floor One,109.0
-18.0,Arc Floor One,112.0
+18.0,Arc Floor One,111.0
 17.0,Arc Floor One,125.0

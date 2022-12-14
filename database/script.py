@@ -28,11 +28,11 @@ while True:
 
 
             try:
-                with open("occupancy_data_new.csv", "r") as file:
-                    print("Ledger Loaded")
+                with open("database.csv", "r") as file:
+                    print("Database Loaded")
             except FileNotFoundError:
-                with open("occupancy_data_new.csv", "w") as file:
-                    print("Ledger Created")
+                with open("database.csv", "w") as file:
+                    print("Database Created")
 
             url = "https://connect2concepts.com/connect2/?type=circle&key=59ac279f-1fd6-4e55-925c-f7e02764ab00"
 
@@ -81,7 +81,7 @@ while True:
 
 
 
-            pd.DataFrame(dictionary).T.to_csv('occupancy_data_new.csv', header=False, mode='a')
+            pd.DataFrame(dictionary).T.to_csv('database.csv', header=False, mode='a')
 
             for i in range(10):
                 print("Sleeping" + i * ".")

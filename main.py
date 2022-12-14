@@ -57,7 +57,7 @@ def main():
         print(venue)
         root.destroy()
         statistics.gym_analysis(venue, start_date, end_date)
-        tk.messagebox.showinfo(message="Report Successfully Saved to Data.csv")
+        tk.messagebox.showinfo(message="Report Successfully Saved to Output/Data.csv")
 
 
     def select_venue():
@@ -85,7 +85,7 @@ def main():
     root.configure(bg="red2")
     greeting_label = tk.Label(text="Hello and Welcome to the...", bg="red2", fg="black", font=12)
     greeting_label.grid(pady=5)
-    image = ImageTk.PhotoImage(Image.open("ARC_Image.png")) # Initialise the image
+    image = ImageTk.PhotoImage(Image.open("database/ARC_Image.png")) # Initialise the image
     serve_image = Label(root, image=image) # Label the image
     serve_image.grid() # Display the image
 
