@@ -1,7 +1,10 @@
+# This script verifies the age of the user. If the user is under 18, the program will exit.
 import datetime
 import tkinter as tk
 from tkinter import *
 import main
+import webbrowser
+
 
 def get_age():
     global month, day, year
@@ -26,8 +29,8 @@ age_root.title("Age Verification")
 month_options = {"January": 1, "February": 2, "March": 3, "April": 4, "May": 5, "June": 6, "July": 7,
                  "August": 8, "September": 9, "October": 10, "November": 11, "December": 12}
 
-day_options = [i for i in range(1, 32)]
-year_options = [i for i in range(1900, datetime.date.today().year)]
+day_options = [i for i in range(1, 32)]  # provides day values from 1 to 31 for dropdown menu
+year_options = [i for i in range(datetime.date.today().year, 1900, -1)]  # descending year values from current year to 1900
 
 year = IntVar(age_root)
 

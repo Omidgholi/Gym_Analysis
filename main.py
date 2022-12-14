@@ -80,15 +80,14 @@ def main():
         analysis_label.grid(pady=5)
 
 
-    root = tk.Tk()
+    root = tk.Tk() # Initialise the root window
     root.title("ARC Gym Analysis")
     root.configure(bg="red2")
     greeting_label = tk.Label(text="Hello and Welcome to the...", bg="red2", fg="black", font=12)
     greeting_label.grid(pady=5)
-    image = ImageTk.PhotoImage(Image.open("ARC_Image.png"))
-    serve_image = Label(root, image=image)
-    serve_image.grid()
-    date_label = tk.Label(text="How would you like to sort through the data?", bg="red2", fg="black")
+    image = ImageTk.PhotoImage(Image.open("ARC_Image.png")) # Initialise the image
+    serve_image = Label(root, image=image) # Label the image
+    serve_image.grid() # Display the image
 
     gym_analyzer_label = tk.Label(text="ARC Gym Analyzer!", bg="red2", fg="black", font=12)
     gym_analyzer_label.grid(pady=5)
@@ -104,7 +103,7 @@ def main():
 
     
 
-    start_cal = DateEntry(root, maxdate=date.today())
+    start_cal = DateEntry(root, maxdate=date.today()) # Initialise the start calendar
 
     start_button = tk.Button(text="Submit Start Range", command=serve_end_cal, font=6)
 
