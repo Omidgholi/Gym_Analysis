@@ -1,13 +1,14 @@
-from tkcalendar import DateEntry
-from datetime import date
 import tkinter as tk
-from tkinter import *
 import tkinter.messagebox
-from PIL import ImageTk, Image
-import os
-import statistics
+from datetime import date
+from tkinter import *
+
 import pandas as pd
-import datetime
+from PIL import ImageTk, Image
+from tkcalendar import DateEntry
+
+import statistics
+
 
 def main():
     def serve_end_cal():

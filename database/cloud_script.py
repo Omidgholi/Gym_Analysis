@@ -1,11 +1,12 @@
+# Script that can be deploted in cloud server or local machine to scrape data from ARC website and dowloads data to database.csv
+import random
 import time
+import warnings
+
+import pandas as pd
+from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from bs4 import BeautifulSoup
-import random
-import pandas as pd
-import csv
-import warnings
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 

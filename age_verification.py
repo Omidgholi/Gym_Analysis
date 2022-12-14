@@ -1,9 +1,10 @@
 # This script verifies the age of the user. If the user is under 18, the program will exit.
 import datetime
 import tkinter as tk
-from tkinter import *
-import main
 import webbrowser
+from tkinter import *
+
+import main
 
 
 def get_age():
@@ -37,7 +38,7 @@ def get_age():
 
 age_root = tk.Tk()  # Create the tkinter window
 age_root.title("Age Verification")  # Set the title of the window
-age_root.cofgure(bg="red2")  # Set the background color of the window
+age_root.configure(bg="red2")  # Set the background color of the window
 # This is a dictionary that corresponds the month name key to an integer equivalent value
 month_options = {"January": 1, "February": 2, "March": 3, "April": 4, "May": 5, "June": 6, "July": 7,
                  "August": 8, "September": 9, "October": 10, "November": 11, "December": 12}
@@ -54,7 +55,7 @@ month.set("Month")  # Setting dropdown title to Month
 day = IntVar(age_root)  # Initializing integer variable for day
 day.set("Day")  # Setting dropdown title to Day
 
-age_label = tk.Label(age_root, text="Please enter your date of birth to verify your age:")  # Instruction label
+age_label = tk.Label(age_root, text="Please enter your date of birth to verify your age:", bg="red2")  # Instruction label
 age_label.grid(row=0, column=1, padx=5, pady=10)  # Position for instruction label
 
 day_dropdown = tk.OptionMenu(age_root, day, *day_options)  # Create the day dropdown menu using the day option for loop

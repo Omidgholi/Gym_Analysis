@@ -1,10 +1,12 @@
 # Used paramaters such as venue, start_date, and end_date to generate statistical report regarding the ARC's Occupancy.
 # Generates A CSV file with the output along with a graph to visualise the output.
-import matplotlib.pyplot as plt
-import seaborn as sns
-import pandas as pd
-import tkinter.messagebox
 import tkinter as tk
+import tkinter.messagebox
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+
 
 def gym_analysis(venue, start_date, end_date):
     """Recieves the venue, start_date, and end_date from main.py and generates a statistical report regarding the ARC's Occupancy. """
