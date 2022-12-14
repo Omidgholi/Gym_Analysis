@@ -11,7 +11,7 @@ def gym_analysis(venue, start_date, end_date):
 
     try:
         cols = ["venue", "date", "time", "status", "count"]
-        df = pd.read_csv("database/database.csv", names=cols)  # Reads the database and stores it in a dataframe
+        df = pd.read_csv("database/database.csv", names=cols).drop_duplicates()  # Reads the database, stores it in a dataframe, and drops duplicates
         # Converts the date column to datetime format
         df["date"] = pd.to_datetime(df["date"], infer_datetime_format=True, cache=True, errors="coerce")
         # Converts the time column to datetime format and extracts the hour

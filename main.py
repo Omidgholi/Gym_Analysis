@@ -57,10 +57,7 @@ def main():
             start_date = None
             end_date = None
 
-
-        print(start_date, end_date)
         venue = venue_select.get()
-        print(venue)
         root.destroy()
         statistics.gym_analysis(venue, start_date, end_date)
         tk.messagebox.showinfo(message="Report Successfully Saved to Output/Data.csv")

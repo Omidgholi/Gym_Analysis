@@ -7,7 +7,8 @@ import webbrowser
 
 
 def get_age():
-    """Processes data obtained by age verification GUI. If the user is under 18, the program will exit"""
+    """Processes data obtained by age verification GUI.
+     If the user is under 18, the program will exit"""
     try:
         global month, day, year  # global day, month, year
         year = year.get()
