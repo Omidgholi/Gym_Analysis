@@ -12,11 +12,14 @@ def gym_analysis(venue, start_date, end_date):
     try:
         cols = ["venue", "date", "time", "status", "count"]
         df = pd.read_csv("database/database.csv", names=cols)  # Reads the database and stores it in a dataframe
-        df["date"] = pd.to_datetime(df["date"], infer_datetime_format=True, cache=True, errors="coerce") # Converts the date column to datetime format
-        df['time'] = pd.to_datetime(df['time'], infer_datetime_format=True, cache=True, errors="coerce").dt.hour # Converts the time column to datetime format and extracts the hour
-        df["count"] = pd.to_numeric(df["count"], errors="coerce")  # Converts the count column to numeric format
+        # Converts the date column to datetime format
+        df["date"] = pd.to_datetime(df["date"], infer_datetime_format=True, cache=True, errors="coerce")
+        # Converts the time column to datetime format and extracts the hour
+        df['time'] = pd.to_datetime(df['time'], infer_datetime_format=True, cache=True, errors="coerce").dt.hour
+        # Converts the count column to numeric format
+        df["count"] = pd.to_numeric(df["count"], errors="coerce")
     except:
-        tk.messagebox.showerror(message="No Data Found") # If the database is not found, an error message is displayed
+        tk.messagebox.showerror(message="No Data Found")  # If the database is not found, an error message is displayed
         exit()
 
     start_time = 0
