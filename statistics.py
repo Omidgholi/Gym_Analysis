@@ -39,8 +39,8 @@ def gym_analysis(venue, start_date, end_date):
                 data = df[df["status"].eq("Open") & df["date"].between(start_date, end_date) & df['time'].between(start_time,end_time)]
             else:
                 data = df[df["venue"].eq(venue) & df["status"].eq("Open") & df["date"].between(start_date, end_date) & df['time'].between(start_time, end_time)]
-        except:
-            tkinter.messagebox.showerror(message="Please Select a different date range", title="Error", icon="error") # If the user selects a date range that is not in the database, an error message is displayed
+        except:  # If the user selects a date range that is not in the database, an error message is displayed
+            tkinter.messagebox.showerror(message="Please Select a different date range", title="Error", icon="error")
             exit()
     try:
         bottom_quartile = round(data["count"].quantile(0.25))  # Calculates the bottom quartile
