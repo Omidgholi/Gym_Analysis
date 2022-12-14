@@ -1,5 +1,3 @@
-# nohup python3 final.py >/dev/null 2>&1 & disown
-#scp azureuser@20.125.141.166:occupancy_data.csv /Users/omidgholizadeh/Documents
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -11,8 +9,7 @@ import warnings
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-#import chromedriver_autoinstaller
-#chromedriver_autoinstaller.install()
+driver_path = "PATH TO CHROMEDRIVER"
 
 
 counter = 0
@@ -40,8 +37,7 @@ while True:
 
             options = Options()
             options.headless = True
-            driver = webdriver.Chrome("/usr/bin/chromedriver", options=options)
-            #driver = webdriver.Chrome("/Users/omidgholizadeh/Downloads/chromedriver", options=options)
+            driver = webdriver.Chrome(driver_path, options=options)
 
             driver.implicitly_wait(20)
             driver.get(url)
