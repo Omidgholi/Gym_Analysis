@@ -37,6 +37,7 @@ def get_age():
 
 age_root = tk.Tk()  # Create the tkinter window
 age_root.title("Age Verification")  # Set the title of the window
+age_root.cofgure(bg="red2")  # Set the background color of the window
 # This is a dictionary that corresponds the month name key to an integer equivalent value
 month_options = {"January": 1, "February": 2, "March": 3, "April": 4, "May": 5, "June": 6, "July": 7,
                  "August": 8, "September": 9, "October": 10, "November": 11, "December": 12}
