@@ -53,9 +53,10 @@ while True:
 
             df = pd.DataFrame()
 
-            dictionary = {"ARC Floor 1": [], "Climbing": [], "ARC Olympic Lifting Zones": [], "ARC Floor 2": [], "South Court": [],
-                          "4 Court Gym": [], "North Court": [], "Recreation Pool": [], "Competition Pool": [], "ARC Express": [],
+            dictionary = {"Arc Floor One": [], "Climbing": [], "Arc Olympic Lifting Zones": [], "Arc Floor Two": [], "South Court": [],
+                          "Four Court Gym": [], "North Court": [], "Recreation Pool": [], "Competition Pool": [], "Arc Express": [],
                           "Spa": [], "Aquaplex Pool Deck": [], "Tennis Courts": []}
+
 
             for venue in venue_data:
                 data = venue.text
