@@ -1,4 +1,4 @@
-For a in-depth description and usage instructions please look at REPORT.txt in documentation folder
+For an in-depth description and usage instructions please look at REPORT.txt in documentation folder
 
 ---USAGE---
 In terminal: pip3 install numpy==1.23.5
