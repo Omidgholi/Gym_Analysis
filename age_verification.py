@@ -46,7 +46,7 @@ month_options = {"January": 1, "February": 2, "March": 3, "April": 4, "May": 5, 
 day_options = [i for i in range(1, 32)]  # Provides day values from 1 to 31 for dropdown menu
 year_options = [i for i in range(datetime.date.today().year, 1900, -1)]  # Descending year values from current year to 1900
 
-year = IntVar(age_root)  # Initializing integer variable for year
+year = IntVar(age_root)   # Initializing integer variable for year
 year.set("Year")  # Setting dropdown title to Year
 
 month = StringVar(age_root)  # Initializing integer variable for month
