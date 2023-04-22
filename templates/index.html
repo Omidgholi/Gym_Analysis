@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC Gym Analyzer</title>
+</head>
+<body>
+    <h1>ARC Gym Analyzer</h1>
+    <form action="/analyze" method="post">
+        <label for="venue">Venue:</label>
+        <select name="venue" id="venue">
+            <option value="ALL">ALL</option>
+            <option value="Arc Floor One">Arc Floor One</option>
+            <!-- Add other venue options here -->
+        </select>
+        <br>
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" id="start_date">
+        <br>
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" id="end_date">
+        <br>
+        <input type="submit" value="Analyze">
+    </form>
+</body>
+</html>

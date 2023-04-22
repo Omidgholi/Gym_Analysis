@@ -6,6 +6,9 @@ import tkinter.messagebox
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+import matplotlib
+matplotlib.use('Agg')
+
 
 
 def gym_analysis(venue, start_date, end_date):
@@ -13,7 +16,9 @@ def gym_analysis(venue, start_date, end_date):
 
     try:
         cols = ["venue", "date", "time", "status", "count"]
-        df = pd.read_csv("database/database.csv", names=cols).drop_duplicates()  # Reads the database, stores it in a dataframe, and drops duplicates
+        #df_old = pd.read_csv("database/database.csv", names=cols)  # Reads the database, stores it in a dataframe, and drops duplicates
+        df = pd.read_csv("/Users/omidgholizadeh/Documents/occupancy_data_new.csv", names=cols)  # Reads the database and stores it in a dataframe
+        #df = pd.concat([df_old, df_new])  # Concatenates the two dataframes
         # Converts the date column to datetime format
         df["date"] = pd.to_datetime(df["date"], infer_datetime_format=True, cache=True, errors="coerce")
         # Converts the time column to datetime format and extracts the hour
